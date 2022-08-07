@@ -4,7 +4,7 @@ set(PROJECT_FULL_NAME "Audio Monitor")
 
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/version.h.in ${CMAKE_CURRENT_SOURCE_DIR}/version.h)
 
-find_package(Qt5Widgets)
+find_qt(COMPONENTS Widgets)
 
 set(CMAKE_AUTOMOC ON)
 
@@ -89,7 +89,7 @@ add_library(audio-monitor MODULE
 	${audio-monitor_SOURCES})
 target_link_libraries(audio-monitor
 		obs-frontend-api
-		Qt5::Widgets
+		Qt::Widgets
 		libobs
 		${audio-monitor_PLATFORM_DEPS})
 
